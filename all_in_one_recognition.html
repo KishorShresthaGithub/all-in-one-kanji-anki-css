@@ -1,91 +1,100 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=devic-witdth, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Anki Front</title>
 
-    <style>
-      .card {
-        font-family: "Meiryo";
-        font-size: 20px;
-        text-align: center;
-        color: black;
-        background-color: white;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=devic-witdth, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Anki Front</title>
 
-      .reading {
-        text-align: left;
-        font-size: 0.9em;
-      }
+  <style>
+    @font-face {
+      font-family: KanjiStrokeOrders;
+      src: url("_KanjiStrokeOrders.ttf");
+    }
 
-      .front {
-        font-size: 4.3em;
-        text-align: center;
-      }
-      .back-answer {
-        text-align: center;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Front  -->
-    <div>
-      <sub style="font-size: 0.7em; color: red">*meaning->kun->on->example</sub>
-    </div>
+    @font-face {
+      font-family: Meiryo;
+      src: url("_Meiryo.ttf");
+    }
 
-    <div class="front">{{ Kanji }}</div>
-    <!-- Front end  -->
+    .card {
+      font-family: "Meiryo";
+      font-size: 20px;
+      text-align: center;
+      color: black;
+      background-color: white;
+    }
 
-    <!-- Back -->
-    {{FrontSide}}
-    <hr id="answer" />
-    <div class="back-answer">
-      <span style="font-size: 17px">{{English}}<br /><br /></span>
-      {{Kunyomi}}<br />{{Onyomi}}<br /><br />{{Nanori}}
+    .reading {
+      text-align: left;
+      font-size: 0.9em;
+    }
 
-      <hr />
+    .front {
+      font-size: 4.3em;
+      text-align: center;
+    }
 
-      <div class="reading">
-        <b>Stroke Order</b> ({{Number of Strokes}} strokes)
-      </div>
+    .back-answer {
+      text-align: center;
+    }
+  </style>
+</head>
 
-      <span style="font-size: 9em; font-family: KanjiStrokeOrders"
-        >{{Kanji}}</span
-      >
-      <hr />
-    </div>
+<body>
+  <!-- Front  -->
+  <div>
+    <sub style="font-size: 0.7em; color: red">*meaning->kun->on->example</sub>
+  </div>
+
+  <div class="front">{{ Kanji }}</div>
+  <!-- Front end  -->
+
+  <!-- Back -->
+  {{FrontSide}}
+  <hr id="answer" />
+  <div class="back-answer">
+    <span style="font-size: 17px">{{English}}<br /><br /></span>
+    {{Kunyomi}}<br />{{Onyomi}}<br /><br />{{Nanori}}
+
+    <hr />
 
     <div class="reading">
-      {{Examples}}
-      <hr />
-      <b>Kanji Level</b><br />・JLPT Level: N{{JLPT Level}}<br />・Jouyou Grade:
-      {{Jouyou Grade}}<br />・Frequency: {{Frequency}}
-      <hr />
-      <b>Mnemonic</b><br />
-      - Keyword:
-      <a href="http://kanji.koohii.com/study/kanji/{{text:Keyword}}"
-        >{{Keyword}}</a
-      >,
-      <a href="http://kanji.koohii.com/study/kanji/{{text:Kanji}}">{{Kanji}}</a
-      ><br />
-      - Koohii Story:<br />
-      ・{{Koohii Story 1}}<br />
-      ・{{Koohii Story 2}}
-      <hr />
-      <b>Reference Infomation</b> <br />
-      ・<a href="http://tangorin.com/kanji/{{text:Kanji}}">Tangorin</a>,
-      <a href="http://jisho.org/search/{{text:Kanji}}">Jisho</a>,
-      <a href="http://www.weblio.jp/content/{{text:Kanji}}">Weblio</a><br />
-      ・Components: <br />{{Components}}<br />
-      ・Kanji Radical: {{Kanji Radical}} (No. {{Radical Number}}, {{Radical
-      Strokes}} strokes)<br />
-      ・Radical Reading: {{Radical Reading}}<br />
-      ・Traditional Form: {{Traditional Form}}<br />
-      ・Classification: {{Classification}}
+      <b>Stroke Order</b> ({{Number of Strokes}} strokes)
     </div>
-    <!-- Back end-->
-  </body>
+
+    <span style="font-size: 9em; font-family: KanjiStrokeOrders">{{Kanji}}</span>
+    <hr />
+  </div>
+
+  <div class="reading">
+    {{Examples}}
+    <hr />
+    <b>Kanji Level</b><br />・JLPT Level: N{{JLPT Level}}<br />・Jouyou Grade:
+    {{Jouyou Grade}}<br />・Frequency: {{Frequency}}
+    <hr />
+    <b>Mnemonic</b><br />
+    - Keyword:
+    <a href="http://kanji.koohii.com/study/kanji/{{text:Keyword}}">{{Keyword}}</a>,
+    <a href="http://kanji.koohii.com/study/kanji/{{text:Kanji}}">{{Kanji}}</a><br />
+    - Koohii Story:<br />
+    ・{{Koohii Story 1}}<br />
+    ・{{Koohii Story 2}}
+    <hr />
+    <b>Reference Infomation</b> <br />
+    ・<a href="http://tangorin.com/kanji/{{text:Kanji}}">Tangorin</a>,
+    <a href="http://jisho.org/search/{{text:Kanji}}">Jisho</a>,
+    <a href="http://www.weblio.jp/content/{{text:Kanji}}">Weblio</a><br />
+    ・Components: <br />{{Components}}<br />
+    ・Kanji Radical: {{Kanji Radical}} (No. {{Radical Number}}, {{Radical
+    Strokes}} strokes)<br />
+    ・Radical Reading: {{Radical Reading}}<br />
+    ・Traditional Form: {{Traditional Form}}<br />
+    ・Classification: {{Classification}}
+  </div>
+  <!-- Back end-->
+</body>
+
 </html>
